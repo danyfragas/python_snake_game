@@ -1,7 +1,6 @@
 from tkinter import *
 import random
 
-# configuração do jogo (variáveis que não serão alteradas)
 GAME_WIDTH = 900
 GAME_HEIGHT = 500
 SPEED = 60
@@ -14,8 +13,8 @@ BACKGROUND_COLOR = "#1C1C1C"
 class Snake:
     def __init__(self):
         self.body_size = BODY_PARTS
-        self.coordinates = []  # lista de coordenadas
-        self.squares = []  # lista de gráficos quadrados
+        self.coordinates = []  
+        self.squares = []  
 
         for i in range(0, BODY_PARTS):
             self.coordinates.append([0, 0])
@@ -111,14 +110,14 @@ def game_over():
     canvas.delete(ALL)
     canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2, font=('consolas', 70),
                        text="GAME OVER", fill="red", tags="gameover")
-    restart_button = Button(window, text="Restart", bg="red", command=restart_game)
+    restart_button = Button(window, text="Restart", bg="white", command=restart_game)
     canvas.create_window(GAME_WIDTH//2, GAME_HEIGHT//2 + 70, window=restart_button)
 
 def initial_screen():
     canvas.delete(ALL)
     canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2, font=('consolas', 70),
                        text="SNAKE GAME", fill="red")
-    start_button = Button(window, text="JOGAR", bg="red", command=start_game)
+    start_button = Button(window, text="PLAY", bg="white", command=start_game)
     canvas.create_window(GAME_WIDTH//2, GAME_HEIGHT//2 + 70, window=start_button)
 
 def start_game():
